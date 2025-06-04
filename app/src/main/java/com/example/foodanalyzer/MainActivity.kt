@@ -1,6 +1,7 @@
 package com.example.foodanalyzer
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -8,17 +9,17 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
+import androidx.compose.foundation.Image // Corrected import for Image composable
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
 import com.example.foodanalyzer.ui.theme.FoodAnalyzerTheme
 import com.example.foodanalyzer.viewmodel.FoodAdditiveViewModel
 import com.example.foodanalyzer.viewmodel.FoodAdditiveViewModelFactory
@@ -118,21 +119,30 @@ fun FoodAdditiveScreen(
                             Text(additive.code, color = Color.Blue, modifier = Modifier.weight(1f))
                             Text(additive.name, modifier = Modifier.weight(2f))
                             val context = LocalContext.current
-                            AsyncImage(
-                                model = ImageRequest.Builder(context)
-                                    .data("raw://${context.resources.getIdentifier(
-                                        "vertical_gauge_${additive.severity}",
-                                        "raw",
-                                        context.packageName
-                                    )}")
-                                    .crossfade(true)
-                                    .error(R.drawable.ic_error) // Fallback image if SVG fails
-                                    .build(),
-                                contentDescription = "Severity ${additive.severity}",
-                                modifier = Modifier
-                                    .size(40.dp)
-                                    .align(Alignment.CenterVertically)
+                            val resourceId = context.resources.getIdentifier(
+                                "vertical_gauge_${additive.severity}",
+                                "drawable",
+                                context.packageName
                             )
+                            if (resourceId == 0) {
+                                Log.e("MainActivity", "VectorDrawable not found for severity ${additive.severity}")
+                                Text(
+                                    text = "Error",
+                                    color = Color.Red,
+                                    modifier = Modifier
+                                        .size(40.dp)
+                                        .align(Alignment.CenterVertically)
+                                )
+                            } else {
+                                Log.d("MainActivity", "VectorDrawable ID for severity ${additive.severity}: $resourceId")
+                                Image(
+                                    painter = painterResource(id = resourceId),
+                                    contentDescription = "Severity ${additive.severity}",
+                                    modifier = Modifier
+                                        .size(40.dp)
+                                        .align(Alignment.CenterVertically)
+                                )
+                            }
                         }
                     }
                 }
