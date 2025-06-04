@@ -149,26 +149,64 @@ fun FoodAdditiveScreen(
             }
         }
 
+// Display Scale of Harmfulness table by default
         Text(
             text = "Scale of Harmfulness of Food Additives",
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(vertical = 16.dp)
+            modifier = Modifier.padding(bottom = 8.dp)
         )
-
         LazyColumn {
+            item {
+                Row(
+                    modifier = Modifier
+                        .background(Color.Blue)
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text("Severity", color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
+                    Text("Description", color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.weight(3f))
+                }
+            }
             items(viewModel.harmfulnessScale) { item ->
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 4.dp)
-                        .background(item.color)
-                        .padding(8.dp)
+                        .padding(vertical = 4.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
+                    val context = LocalContext.current
+                    val resourceId = context.resources.getIdentifier(
+                        "vertical_gauge_${item.severity}",
+                        "drawable",
+                        context.packageName
+                    )
+                    Box(
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        if (resourceId == 0) {
+                            Log.e("MainActivity", "VectorDrawable not found for severity ${item.severity}")
+                            Text(
+                                text = "Error",
+                                color = Color.Red,
+                                modifier = Modifier.align(Alignment.Center)
+                            )
+                        } else {
+                            Log.d("MainActivity", "VectorDrawable ID for severity ${item.severity}: $resourceId")
+                            Image(
+                                painter = painterResource(id = resourceId),
+                                contentDescription = "Severity ${item.severity}",
+                                modifier = Modifier
+                                    .size(40.dp)
+                                    .align(Alignment.Center)
+                            )
+                        }
+                    }
                     Text(
-                        text = "${item.severity}: ${item.description}",
+                        text = item.description,
                         fontSize = 14.sp,
-                        color = Color.Black
+                        modifier = Modifier.weight(3f)
                     )
                 }
             }
