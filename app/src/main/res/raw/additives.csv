@@ -1,0 +1,421 @@
+Code,Name,Severity
+322a,Lecithin - oat,0
+E100,Curcumin,0
+E101,Riboflavin,0
+E102,Tartrazine,4
+E104,Quinoline yellow,3
+E107,Yellow 2G,5
+E110,Yellow SY,5
+E1102,Glucose oxidase,4
+E1103,Invertase,2
+E1105,Lysozyme,1
+E120,Carminic acid,5
+E1200,Polydextrose,2
+E1201,"Polyvinylpyrrolidone (PVP, Povidone)",4
+E1202,"Polyvinylpolypyrrolidone (Cross-linked povidone, PVPP)",4
+E1204,Pullulan,1
+E121,Lemon red 2,6
+E122,Azorubine,3
+E123,Amaranth ( Cl food red 9 ),6
+E124,"Ponceau 4R (Cl Food Red 7, Cochineal Red A)",6
+E127,Erythrosin ( Cl food red 14 ),4
+E128,"Red 2G (Cl food red 10, Azogeranin)",5
+E129,Red Allura AC ( Cl food red 17 ),4
+E131,Patent Blue V (CI Food Blue V),4
+E132,"Indigotine (Cl food blue 1, Indigocarmine)",5
+E133,Brilliant Blue FCF ( Cl Food Blue 2 ),5
+E140,Chlorophylls and chlorophyllins,0
+E1404,Oxidized starch,2
+E141,Copper complexes of chlorophylls and chlorophyllins,1
+E1410,Starch phosphate,2
+E1411,Distarch glycerol,3
+E1412,Cross-linked starch phosphate,2
+E1413,Cross-linked starch phosphate,2
+E1414,Acetate of cross-linked starch phosphate,2
+E1414,Modified starch,2
+E1414,Modified potato starch,2
+E1414,Modified corn starch,2
+E142,Zelen S,3
+E1420,Acetate of starch,2
+E1422,Starch cross-linked adipate acetate,2
+E143,Fast green FCF,4
+E1440,Starch hydroxypropyl ether,2
+E1442,Hydroxypropyl ether of cross-linked starch phosphate,2
+E1450,Sodium starch octenyl succinate,2
+E1451,Acetylated oxidized starch,2
+E1452,Starch aluminum octenyl succinate (SAOS),3
+E150,Caramel,0
+E1503,Castor oil,1
+E1505,Triethyl citrate,1
+E150a,Caramel,0
+E150b,Caustic sulphite caramel,1
+E150c,Ammonia caramel,3
+E150d,Ammonia sulphite caramel,3
+E151,"Black BN (Gloss Black BN, Brilliant Black BN)",4
+E1517,Glyceryl diacetate,2
+E1518,Glyceryl triacetate,2
+E1519,Benzyl alcohol,3
+E1520,Propylene glycol,3
+E1521,Polyethylene glycol (PEG 6000),2
+E153,Carbon from plant material,1
+E154,Brown FK ( CI food grade brown 1 ),4
+E155,HT brown ( CI food grade brown 3 ),5
+E160a,Carotenes,0
+E160a(i),A mixture of carotenes,0
+E160a(ii),Beta-carotene,0
+E160b,"Annatto, Bixin, Norbixin",3
+E160c,"Paprika extract, Capsanthin, Capsorubin",0
+E160d,Lycopene,0
+E160e,Beta-apo-8-carotenal,1
+E161a,Flavoxanthin,1
+E161b,Lutein,0
+E161c,Cryptoxanthin,0
+E161d,Rubixanthin,1
+E161e,Violoxanthin,1
+E161f,Rhodoxanthin,1
+E161g,Canthaxanthin,3
+E162,Betanin,0
+E163,Anthocyanins,0
+E164,"Saffron, Saffron yellow",0
+E166,Sandalwood,0
+E170,Calcium carbonates,0
+E171,Titanium dioxide,4
+E172,Iron oxides and hydroxides,2
+E173,Aluminum ( CI metallic pigment ),4
+E174,Silver,4
+E175,Gold,1
+E180,Litholrubin BK,4
+E182,Orchil,4
+E200,Sorbic acid,3
+E201,Sodium sorbate,3
+E202,Potassium sorbate,3
+E203,Calcium Sorban,3
+E209,Heptylparaben,4
+E210,Benzoic acid,5
+E211,Sodium benzoate,4
+E212,Potassium benzoate,4
+E213,Calcium benzoate,4
+E214,Ethyl parahydroxybenzoate,4
+E215,Ethyl parahydroxybenzoate sodium salt,4
+E216,Propyl parahydroxybenzoate,4
+E217,Propyl parahydroxybenzoate sodium salt,4
+E218,Methyl parahydroxybenzoate,4
+E219,Methyl parahydroxybenzoate sodium salt,4
+E220,Sulfur dioxide,5
+E221,Sodium sulfite,5
+E222,Sodium bisulfite,5
+E223,Sodium bisulfite,5
+E224,Potassium disulfite,5
+E225,Potassium sulfite,5
+E226,Calcium sulfite,5
+E227,Calcium bisulfite,5
+E228,Potassium bisulfite,5
+E230,Biphenyl,5
+E231,Orthophenylphenol,4
+E232,Sodium orthophenylphenolate,5
+E233,Thiabendazole,4
+E234,Nisin,0
+E235,Natamycin,3
+E236,Formic acid,3
+E239,Hexamethylenetetramine,4
+E240,Formaldehyde,6
+E242,Dimethyl Dicarbonate (Dimethyl Dicarbonate),3
+E249,Potassium nitrite,5
+E250,Sodium nitrite,5
+E251,Sodium nitrate,4
+E252,Potassium nitrate,4
+E260,Acetic acid,0
+E261,Potassium acetate,2
+E262,Sodium diacetate,2
+E262,Sodium acetates,2
+E263,Calcium acetate,2
+E265,Acetic acid anhydrous,1
+E270,Lactic acid,0
+E280,Propionic acid,3
+E281,Sodium propionate,3
+E282,Calcium propionate,3
+E283,Potassium propionate,3
+E284,Boric acid,5
+E285,Sodium tetraborate (Borax),5
+E290,Carbon dioxide,0
+E296,Malic acid,0
+E297,Fumaric acid,1
+E300,Ascorbic acid,0
+E301,Sodium ascorbate,1
+E302,Calcium ascorbate,1
+E304,Ascorbyl palmitate - Esters of fatty acids with ascorbic acid,1
+E306,Extract with a high content of tocopherols,0
+E307,Alpha-tocopherol,1
+E308,Gamma-tocopherol,1
+E309,Delta-tocopherol,1
+E310,Propyl gallate,4
+E311,Octyl gallate,4
+E312,Dodecyl gallate,5
+E314,Guaiac Gum,0
+E315,Erythorbic acid,2
+E316,Sodium erythorbate,2
+E319,Tertiary butyl hydroquinone (TBHQ),5
+E320,Butyl hydroxyanisole (BHA),3
+E321,Butyl Hydroxytoluene (BHT),3
+E322,Lecithins,0
+E323,Anoxomer,2
+E324,Ethoxyquin,4
+E325,Sodium lactate,1
+E326,Potassium lactate,1
+E327,Calcium lactate,1
+E330,Citric acid,0
+E331,Sodium citrates,1
+E331,Sodium citrate,1
+E332,Potassium citrates,1
+E333,Calcium Citronates,1
+E334,Tartaric acid,1
+E335,Sodium tartrates,2
+E336,Potassium hydrogen tartrate,0
+E336,Potassium tartrates,0
+E336,Potassium tartrate,0
+E337,Sodium potassium tartrate,2
+E338,Phosphoric acid,2
+E339,Sodium phosphates,2
+E339,Sodium phosphate,2
+E339,Sodium dihydrogen phosphate,2
+E340,Potassium phosphates,2
+E340(i),Potassium dihydrogen phosphate,2
+E340(ii),Potassium monohydrogen phosphate,2
+E340(iii),Potassium phosphate,2
+E341,Calcium phosphate,2
+E341,Calcium phosphates,2
+E342,Ammonium phosphates,2
+E343,Magnesium phosphates,2
+E350,Apple cider sodium,2
+E351,Potassium malate,1
+E352,Calcareous apples,1
+E353,Metatartaric acid,2
+E354,L+- calcium tartrate,1
+E355,Adipic acid,2
+E356,Adipan sodium,2
+E357,Adipan potassium,2
+E363,Succinic acid,0
+E380,Triammonium citrate,2
+E381,Ferric ammonium citrate,2
+E383,Calcium glycerophosphate,1
+E384,Isopropyl citrate,2
+E385,Disodium calcium salt of diaminetetraacetic acid,3
+E385,Calcium disodium ethylenediaminetetraacetate,3
+E385,calcium-disodium EDTA,3
+E385,calcium-disodium,3
+E385,EDTA,3
+E386,Disodium ethylenediaminetetraacetate,3
+E387,Oxystearin,2
+E388,Thiodipropionic acid,2
+E389,Dilauryl thiodipropionate,2
+E390,Distearyl thiodipropionate,2
+E392,Rosemary extracts,0
+E400,Alginic acid,2
+E401,Sodium alginate,3
+E402,Potassium alginate,3
+E403,Ammonium alginate,3
+E404,Calcium alginate,3
+E405,Propylene glycol alginate,3
+E406,Agar,0
+E407,Carrageenan,2
+E407a,Euchema rubber,0
+E409,Arabinnogalactan,0
+E410,Carob,0
+E412,Guar gum,0
+E413,Tragacanth,2
+E414,Arabic gum,0
+E415,Xanthan,1
+E416,Gum karaya,0
+E417,Rubber tare,0
+E418,Gellan gum,0
+E419,Rubber ghatti,0
+E420,Sorbitol,3
+E421,Mannitol,3
+E422,Glycerol,1
+E425,Konjac gum,0
+E430,Polyoxyethylene stearate,3
+E431,Polyoxyethylene monostearate,3
+E432,Polyoxyethylene sorbitan monolaurate,2
+E433,Polyoxyethylene sorbitan monooleate,2
+E434,Polyoxyethylene sorbitan monopalmitate,2
+E435,Polyoxyethylene sorbitan monostearate,2
+E436,Polyoxyethylene sorbitan tristearate,2
+E440,Pectins,1
+E440(i),Pectin,0
+E440(ii),Amidated pectin,2
+E442,Ammonium phosphatides,1
+E443,Brominated vegetable oil,4
+E444,Sucrose acetate isobutyrate,2
+E445,Resin ester,1
+E446,Succistearin,2
+E450,Diphosphates,3
+E450,Diphosphate,3
+E451,Triphosphates - sodium and potassium,3
+E452,"Polyphosphates (sodium, potassium and calcium)",3
+E459,Beta - cyclodextrin,3
+E460,Cellulose,1
+E461,Methylcelulóza,1
+E461,Methylcellulose,1
+E462,Ethyl cellulose,1
+E463,Hydroxypropyl cellulose,1
+E464,Hydroxypropylmethylcelulóza,1
+E464,Hydroxypropylmethylcellulose,1
+E465,Ethyl methyl cellulose,1
+E466,Carboxymethyl cellulose,1
+E467,Ethyl hydroxyethyl cellulose,1
+E468,Croscarmellose,1
+E469,Enzymatically hydrolyzed carboxymethyl cellulose,1
+E470,"Sodium, potassium and calcium salts of fatty acids, magnesium salts of fatty acids",1
+E471,Mono and diglycerides of fatty acids,1
+E472,"Esters of mono and diglycerides of fatty acids a, b, c, d, e, f",1
+E473,Sucrose esters with fatty acids,1
+E474,Saccharoglycerides,1
+E475,Polyglycerol esters with fatty acids,1
+E476,Polyglycerol polyricinoleate,3
+E477,Propylene glycol esters with fatty acids,1
+E478,Lactylated esters of glycerol and propanediol,1
+E479b,Soybean oil with glycerides of fatty acids,1
+E480,Sodium dioctyl sulfosuccinate,4
+E481,Sodium stearoyl lactylate,2
+E482,Calcium stearoyl lactylate,2
+E483,Stearyl tartrate,2
+E484,Stearyl citrate,2
+E487,Sodium lauryl sulfate,4
+E488,Ethoxylated mono and di glycerides,1
+E491,Sorbitol monostearate,3
+E492,Sorbitol tristearate,1
+E493,Sorbitol monolaurate,1
+E494,Sorbitol monooleate,1
+E495,Sorbitol monopalmitate,1
+E500,Sodium carbonates,1
+E500,Sodium carbonate,1
+E500,Sodium bicarbonate,1
+E500,Sodium sequicarbonate,1
+E501,Potassium carbonates,2
+E503,Ammonium carbonate,2
+E504,Magnesium carbonates,1
+E507,Hydrochloric acid,2
+E508,Potassium chloride,2
+E509,Calcium chloride,1
+E510,Ammonium chloride,2
+E511,Magnesium chloride,1
+E512,Stannous chloride,4
+E513,Sulfuric acid,2
+E514,Sodium sulfates,1
+E515,Potassium sulfates,1
+E516,Calcium sulfate,1
+E517,Ammonium sulfate,2
+E518,Magnesium sulfate,1
+E520,Aluminum sulfate,3
+E521,Sodium aluminum sulfate,2
+E522,Potassium aluminum sulfate,2
+E523,Ammonium aluminum sulfate,2
+E524,Sodium hydroxide,1
+E525,Potassium hydroxide,2
+E526,Calcium hydroxide,1
+E527,Ammonium hydroxide,2
+E528,Magnesium hydroxide,1
+E529,Calcium oxide,1
+E530,Magnesium oxide,1
+E535,Sodium ferrocyanide,2
+E536,Potassium ferrocyanide,2
+E538,Calcium ferrocyanide,2
+E539,Sodium thiosulfate,2
+E541,Sodium aluminum phosphate,2
+E542,Edible phosphate,1
+E550,Sodium silicate,2
+E551,Silica,1
+E551,Silicon dioxide,1
+E552,Calcium silicate,1
+E553a,Magnesium silicate,1
+E553b,Talc,2
+E554,Sodium aluminosilicate,2
+E555,Potassium aluminosilicate,2
+E556,Calcium aluminosilicate,2
+E558,Aluminum magnesium silicate,3
+E559,Aluminum silicate,2
+E570,Fatty acids,1
+E572,Magnesium stearate,1
+E574,Gluconic acid,0
+E575,Gluconolactone,1
+E576,Sodium gluconate,1
+E577,Potassium gluconate,1
+E578,Calcium gluconate,1
+E579,Ferrous Gluconate,1
+E585,Ferrous lactate,2
+E620,L-glutamic acid,5
+E621,monosodium glutamate,5
+E621,Monosodium L-Glutamate,5
+E622,Potassium glutamate,5
+E623,Calcium glutamate,5
+E624,Ammonium glutamate,5
+E625,Magnesium glutamate,5
+E626,Guanylic acid,3
+E627,Sodium guanylate,3
+E628,Potassium guanylate,3
+E629,Calcium guanylate,3
+E630,Inosinic acid,3
+E631,Sodium inosinate,3
+E632,Potassium inosinate,3
+E633,Calcium inosinate,3
+E634,Calcium ribonucleotides,4
+E635,Disodium ribonucleotides,4
+E636,Maltol,3
+E637,Ethyl maltol,3
+E640,Glycine,0
+E641,Leucine,0
+E642,Lysine hydrochloride,1
+E650,Zinc acetate,2
+E900,Dimethyl silicone oil,2
+E901,Beeswax,0
+E902,Candelilla wax,1
+E903,Carnauba wax,1
+E904,Shellac,1
+E905,Microcrystalline wax,3
+E905a,Mineral oil,4
+E905b,Petroleum jelly,3
+E905c,Petroleum wax,2
+E908,Rice bran wax,1
+E912,Esters of montanic acids,1
+E913,Lanolin,0
+E914,Oxidized polyethylene wax,2
+E920,L-cysteine,1
+E921,L-cystine,0
+E924a,Potassium bromate,5
+E925,Chlorine,5
+E926,Chlorine dioxide,4
+E927a,Azoformamide,3
+E927b,Urea,3
+E928,Benzoyl peroxide,4
+E929,Acetone peroxide,3
+E930,Calcium peroxide,3
+E938,Argon,1
+E939,Helium,1
+E940,Dichlorodifluoromethane,5
+E941,Nitrogen,0
+E942,Nitrous oxide,2
+E943a,Butane,2
+E943b,Isobutane,2
+E944,Propane,2
+E945,Chloropentanefluoroethane,3
+E946,Octafluorocyclobutane,2
+E948,Oxygen,0
+E949,Hydrogen,1
+E950,Acesulfame K,4
+E951,Aspartame,5
+E952,Cyclamates,6
+E953,Isomalt,1
+E954,Saccharin and its salts,5
+E955,Sucralose,2
+E956,Alitham,2
+E957,Thaumatin,0
+E958,Glycyrrhizin,3
+E959,Neohesperidin DC,1
+E960,Steviol glycosides,0
+E961,Not there,3
+E962,Aspartame/acesulfame salt,4
+E965,Maltitol,2
+E966,Lactitol,2
+E967,Xylitol,0
+E968,Erythritol,0
+E999,Quillage bark extract,1
