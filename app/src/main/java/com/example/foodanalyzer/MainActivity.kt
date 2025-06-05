@@ -1,3 +1,4 @@
+
 package com.example.foodanalyzer
 
 import android.os.Bundle
@@ -7,11 +8,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn // Ensure this is the one being used
-import androidx.compose.foundation.lazy.items // Ensure this is the one being used
-// Remove unused scroll state imports if they were added before
-// import androidx.compose.foundation.rememberScrollState
-// import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -20,13 +18,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign // For centering text
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.foodanalyzer.ui.theme.FoodAnalyzerTheme
 import com.example.foodanalyzer.viewmodel.FoodAdditiveViewModel
 import com.example.foodanalyzer.viewmodel.FoodAdditiveViewModelFactory
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,14 +57,20 @@ fun FoodAdditiveScreen(
     )
 ) {
     var inputText by remember { mutableStateOf("") }
+    var translatedText by remember { mutableStateOf("") }
+    var isTranslating by remember { mutableStateOf(false) }
     val analysisResult by viewModel.analysisResult.collectAsState()
     var analysisAttempted by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
 
-    LazyColumn( // Replaced Column with LazyColumn for a single scrollable page
+    // Replace with your Google Cloud Translation API key
+    val apiKey = "AIzaSyCgwqIjZ6S0SNlJ0LcJqaUiXjQf44JOCG0" // Replace with your actual API key
+
+    LazyColumn(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally // Affects how items are aligned if not fillMaxWidth
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         item {
             Text(
@@ -84,14 +96,32 @@ fun FoodAdditiveScreen(
         item {
             Button(
                 onClick = {
-                    viewModel.analyzeAdditives(inputText)
-                    analysisAttempted = true
+                    coroutineScope.launch {
+                        isTranslating = true
+                        try {
+                            // Translate the input text to English
+                            val translated = translateText(inputText, apiKey)
+                            translatedText = translated
+                            Log.d("MainActivity", "Translated text: $translatedText")
+                            // Analyze the translated text
+                            viewModel.analyzeAdditives(translatedText)
+                            analysisAttempted = true
+                        } catch (e: Exception) {
+                            Log.e("MainActivity", "Translation failed", e)
+                            // Fallback: Analyze the original text if translation fails
+                            viewModel.analyzeAdditives(inputText)
+                            analysisAttempted = true
+                        } finally {
+                            isTranslating = false
+                        }
+                    }
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 16.dp)
+                    .padding(bottom = 16.dp),
+                enabled = !isTranslating
             ) {
-                Text("Analyze")
+                Text(if (isTranslating) "Translating..." else "Analyze")
             }
         }
 
@@ -114,7 +144,6 @@ fun FoodAdditiveScreen(
                         modifier = Modifier.fillMaxWidth().padding(top = 8.dp, bottom = 8.dp)
                     )
                 }
-                // Header for results table
                 item {
                     Row(
                         modifier = Modifier
@@ -128,7 +157,6 @@ fun FoodAdditiveScreen(
                         Text("Severity", color = Color.White, fontWeight = FontWeight.Bold)
                     }
                 }
-                // Items for results table
                 items(analysisResult!!) { additive ->
                     Row(
                         modifier = Modifier
@@ -165,7 +193,7 @@ fun FoodAdditiveScreen(
                         }
                     }
                 }
-                item { // Add some padding after the results table
+                item {
                     Spacer(modifier = Modifier.height(16.dp))
                 }
             }
@@ -176,10 +204,9 @@ fun FoodAdditiveScreen(
                 text = "Scale of Harmfulness of Food Additives",
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
-                modifier = Modifier.fillMaxWidth().padding(top = 16.dp, bottom = 8.dp) // Ensure consistent padding
+                modifier = Modifier.fillMaxWidth().padding(top = 16.dp, bottom = 8.dp)
             )
         }
-        // Header for scale table
         item {
             Row(
                 modifier = Modifier
@@ -192,8 +219,7 @@ fun FoodAdditiveScreen(
                 Text("Description", color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.weight(3f))
             }
         }
-        // Items for scale table
-        items(viewModel.harmfulnessScale) { scaleItem -> // Renamed to avoid conflict
+        items(viewModel.harmfulnessScale) { scaleItem ->
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -233,5 +259,54 @@ fun FoodAdditiveScreen(
                 )
             }
         }
+    }
+}
+
+// Function to translate text using Google Cloud Translation API via HTTP
+suspend fun translateText(text: String, apiKey: String): String = withContext(Dispatchers.IO) {
+    if (text.isBlank()) return@withContext text // Skip translation for empty text
+
+    try {
+        val client = OkHttpClient()
+
+        // Build the JSON request body
+        val requestBodyJson = JSONObject().apply {
+            put("q", text)
+            put("target", "en") // Target language: English
+            put("format", "text")
+        }.toString()
+
+        // Create the HTTP request
+        val request = Request.Builder()
+            .url("https://translation.googleapis.com/language/translate/v2?key=$apiKey")
+            .post(
+                requestBodyJson.toRequestBody("application/json; charset=utf-8".toMediaType())
+            )
+            .build()
+
+        // Execute the request
+        client.newCall(request).execute().use { response ->
+            if (!response.isSuccessful) {
+                Log.e("MainActivity", "Translation API failed: ${response.code} - ${response.message}")
+                throw Exception("Translation API failed: ${response.code} - ${response.message}")
+            }
+
+            val responseBody = response.body?.string() ?: throw Exception("Empty response body")
+            Log.d("MainActivity", "Translation API response: $responseBody")
+
+            // Parse the JSON response
+            val jsonResponse = JSONObject(responseBody)
+            val translations = jsonResponse
+                .getJSONObject("data")
+                .getJSONArray("translations")
+            if (translations.length() > 0) {
+                return@withContext translations.getJSONObject(0).getString("translatedText")
+            } else {
+                throw Exception("No translations found in response")
+            }
+        }
+    } catch (e: Exception) {
+        Log.e("MainActivity", "Translation error", e)
+        throw e // Rethrow to handle in the calling coroutine
     }
 }
