@@ -60,7 +60,7 @@ class FoodAdditiveViewModel(private val context: Context) : ViewModel() {
     }
 
     fun analyzeAdditives(input: String) {
-        val ingredients = input.split(",").map { it.trim().lowercase() }
+        val ingredients = input.split("[,;:]".toRegex()).map { it.trim() } // Updated to match JavaScript
         if (ingredients.isEmpty() || ingredients.all { it.isEmpty() }) {
             _analysisResult.value = null // Indicate no results
             return
